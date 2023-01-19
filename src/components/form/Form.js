@@ -1,22 +1,22 @@
-import { Component } from 'react'
+import { Component } from 'react';
 
 class Form extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       input1: '',
       input2: '',
       valueSelected: 'usd',
-    }
+    };
   }
 
   onValueChange = (e) => {
-    this.setState({ input1: e.target.value })
-  }
+    this.setState({ input1: e.target.value });
+  };
 
   onSelect = (e) => {
-    this.setState({ valueSelected: e.target.value })
-  }
+    this.setState({ valueSelected: e.target.value });
+  };
 
   componentDidUpdate(prevProps, prevState) {
     if (
@@ -25,8 +25,8 @@ class Form extends Component {
     ) {
       let a = (
         Number(this.state.input1) / this.props[this.state.valueSelected]
-      ).toFixed(2)
-      this.setState({ input2: a === 'NaN' ? 0 : a })
+      ).toFixed(2);
+      this.setState({ input2: a === 'NaN' ? 0 : a });
     }
   }
 
@@ -66,8 +66,8 @@ class Form extends Component {
           />
         </div>
       </form>
-    )
+    );
   }
 }
 
-export default Form
+export default Form;
